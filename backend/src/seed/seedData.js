@@ -12,7 +12,9 @@ const AuditLog = require('../models/AuditLog');
 
 const seedDatabase = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smart_grocery_db');
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/smart_grocery_db');
+    }
     console.log('[Seed] Connected to MongoDB. Clearing existing collections...');
 
     await User.deleteMany({});
