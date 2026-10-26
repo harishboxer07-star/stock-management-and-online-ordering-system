@@ -4,7 +4,7 @@
   "private": true,
   "description": "Smart Grocery AI - Full Stack Retail & Quick-Commerce Platform",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "build": "cd frontend && npm install && npm run build",
     "start": "cd backend && node src/server.js"
   },
   "engines": {
